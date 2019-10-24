@@ -1,4 +1,3 @@
-from tests import config
 from tests.po.elements.base_elements import BrowserObject, ElementCollection
 
 
@@ -10,20 +9,21 @@ class BasePage(BrowserObject):
     browser = None
 
     def set_browser(self, browser):
+        """
+        Sets attribute browser to the give paramater browser
+        :param browser: selenium webdriver browser that is to be set
+        """
         self.browser = browser
         for elements in self.__dict__.values():
             if isinstance(elements, ElementCollection):
                 elements.set_browser(browser)
 
-    def go_to_url(self):
+    def go_to_url(self, url):
         """
-        make a get request
+        Makes a get request to the provided url
+        :param url: string which is the address of a page to make the get request to
         """
-        url = config.TEST_ADDRESS
         self.browser.get(url)
 
-    def get_current_url(self):
-        """
-        Get current url.
-        """
-        return self.browser.current_url
+
+# removed function that was never used

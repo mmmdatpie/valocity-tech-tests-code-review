@@ -8,6 +8,6 @@ from tests.po.elements.base_elements import ElementCollection
 
 class HomeElements(ElementCollection):
 
-    def __init__(self):
-        self.search_text = AsyncElement('input[aria-label="Search"]')
-        self.search_button = AsyncElement('input[aria-label="Google Search"]')
+    def __init__(self, search_text, search_button):  # removed the hard coded strings
+        self.search_text = AsyncElement(search_text)
+        self.search_button = AsyncElement(search_button)

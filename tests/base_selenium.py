@@ -23,6 +23,7 @@ class SeleniumCase(unittest.TestCase):
     Base Selenium Class
     """
     browser = None
+
     base_url = config.TEST_ADDRESS
     automation_bug_list = []
 
